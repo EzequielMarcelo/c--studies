@@ -1,4 +1,10 @@
-﻿double doubleValue = 45.99;
-int intValue = (int)doubleValue;  //need to force value to int
+﻿using Implicit_Operators;
 
-Console.WriteLine(intValue);
+var phone = new Phone 
+{
+    CountryCode = "55",
+    Area = "27",
+    Number = "123456789"
+};
+
+Console.WriteLine(phone);
