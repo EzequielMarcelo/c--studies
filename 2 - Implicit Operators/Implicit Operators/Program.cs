@@ -1,4 +1,4 @@
-﻿int intValue = 100;
-double doubleValue = intValue;
+﻿double doubleValue = 45.99;
+int intValue = (int)doubleValue;  //need to force value to int
 
-Console.WriteLine(doubleValue);
+Console.WriteLine(intValue);
