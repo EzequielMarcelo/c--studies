@@ -1,9 +1,13 @@
-﻿var queue = new PriorityQueue<string, int>();
+﻿using Priority_Queue;
 
-queue.Enqueue("Item 1", 0);
-queue.Enqueue("Item 2", 4);
-queue.Enqueue("Item 3", 2);
-queue.Enqueue("Item 4", 1);
+var queue = new PriorityQueue<Student, string>(new RoleComparer());
 
-while(queue.TryDequeue(out string? item, out int priority))
-    Console.WriteLine($"Item: {item} Priority: {priority}");
+
+queue.Enqueue(new Student("Zezin"), "student");
+queue.Enqueue(new Student("Tiao"),  "premium");
+queue.Enqueue(new Student("Junin"), "admin");
+
+while (queue.TryDequeue(out Student? item, out string? priority))
+    Console.WriteLine($"Item: {item.name} Priority: {priority}");
+
+public record Student(string name);
